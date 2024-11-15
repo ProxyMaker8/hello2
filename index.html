@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search, Image Search, and Advanced Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], select {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"], input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Google Search, Image Search, and Advanced Search</h1>
+
+    <h2>Google Search</h2>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search Google" required>
+        <input type="submit" value="Search">
+        <input type="button" value="I'm Feeling Lucky" onclick="window.location.href='https://www.google.com/search?btnI=1&q=' + encodeURIComponent(this.form.q.value);">
+    </form>
+
+    <h2>Google Image Search</h2>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search Google Images" required>
+        <input type="hidden" name="tbm" value="isch">
+        <input type="submit" value="Search Images">
+    </form>
+
+    <h2>Google Advanced Search</h2>
+    <form action="https://www.google.com/search" method="get" target="_blank">
+
+        <input type="text" name="q" placeholder="Search Google" required>
+
+        <input type="text" name="as_epq" placeholder="Exact phrase">
+
+        <input type="text" name="as_eq" placeholder="Exclude words">
+
+        <input type="text" name="as_sitesearch" placeholder="Search within site (e.g. example.com)">
+
+        <select name="as_filetype">
+            <option value="">Any file type</option>
+            <option value="pdf">PDF</option>
+            <option value="doc">DOC</option>
+            <option value="ppt">PPT</option>
+        </select>
+
+        <select name="lr">
+            <option value="">Any language</option>
+            <option value="lang_en">English</option>
+            <option value="lang_es">Spanish</option>
+            <option value="lang_fr">French</option>
+        </select>
+
+        <input type="submit" value="Advanced Search">
+    </form>
+
+</body>
+</html>
